@@ -1,0 +1,28 @@
+<div class="container mt-5 mb-5">
+  <table>
+    <thead>
+      <th>Application Date</th>
+      <th>No of Bags</th>
+      <th>Address</th>
+      <th>Size of Bag</th>
+      <th>Action</th>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let a of listApplication">
+        <td data-label="name">{{a.applicationDate | date: "mediumDate"}}</td>
+        <td>{{a.noOfBags}}</td>
+        <td>{{a.collectAddress}}</td>
+        <td>{{a.sizeOfBag}}</td>
+        <td *ngIf="a.statusId == 1">
+          <a class="btn btn-sm btn-lg" style="color: white; background-color: rgb(83, 201, 83); "
+            (click)="accept(a.applicationNo)">Accept</a>
+        </td>
+        <td *ngIf="a.statusId == 2">
+          <a class="btn btn-success btn-sm btn-lg disabled" style="color: white;"
+            (click)="accept(a.applicationNo)">Accepted</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

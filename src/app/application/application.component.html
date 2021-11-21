@@ -1,0 +1,37 @@
+<div id="cards_landscape_wrap-2">
+  <div class="container">
+    <div class="row">
+      <a [routerLink]="['/applyapplication']">
+        <button type="button" style="float: right" class="btn btn-primary btn-rounded float-right">
+          Apply for Application
+        </button></a>
+    </div>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let a of listApplication">
+        <div class="card-flyer">
+          <div class="text-box">
+            <div class="text-container">
+              <h4>Application Information</h4>
+              <hr style="
+              width: 100%;
+              border-top: 5px solid #107eed;
+              border-bottom: none;
+            " />
+              <h5>Application Date : {{a.applicationDate | date: "mediumDate"}}</h5>
+              <h5>Number of Bags : {{a.noOfBags}}</h5>
+              <h5>Address : {{a.collectAddress}}</h5>
+              <h5>Size of Bag : {{a.sizeOfBag}}</h5>
+              <h5 *ngIf="a.statusId">
+                <span class="{{
+                    service.applicationStatus[a.statusId]
+                  }}">{{
+                  service.applicationStatus[a.statusId]
+                  }}</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

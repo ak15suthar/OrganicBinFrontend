@@ -1,0 +1,27 @@
+<div class="projcard-container">
+  <div class="row">
+    <a *ngIf="isAdminLogIn" [routerLink]="['/addblog']">
+      <button type="button" style="float: right; background-color: #4c7e81; color: white;" class="btn btn btn-rounded float-right">
+        Add Blog
+      </button></a>
+  </div>
+  <div class="row mt-4">
+    <div class="row" *ngFor="let b of listBlog">
+      <div class="projcard projcard-blue">
+        <div class="projcard-innerbox">
+          <div class="projcard-textbox">
+            <div class="projcard-title">Blog Title : {{b.blogTitle}} <a *ngIf="isAdminLogIn"
+                [routerLink]="['/addblog']">
+                <button type="button" style="float: right;background-color: #4c7e81; color: white;"
+                  class="btn btn btn-rounded float-right">
+                  Edit
+                </button></a></div>
+            <div class="projcard-bar"></div>
+            <div class="projcard-description">
+              {{b.about}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

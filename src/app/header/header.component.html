@@ -1,0 +1,46 @@
+<body class="sub_page">
+  <div class="hero_area ">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              OrbanicBin
+            </span>
+          </a>
+          <div class="" id="">
+
+
+            <div class="custom_menu-btn">
+              <button onclick="openNav()">
+                <span class="s-1"> </span>
+                <span class="s-2"> </span>
+                <span class="s-3"> </span>
+              </button>
+            </div>
+            <div id="myNav" class="overlay">
+              <div class="overlay-content">
+                <a href="">Home</a>
+                <a href="service">Service</a>
+                <a href="blog">Blog</a>
+                <a *ngIf="isAdminLogIn"  href="viewapplication">View Application</a>
+                <a href="team">Team</a>
+
+                <a href="aboutus">About Us</a>
+                <a href="contactus">Contact Us</a>
+
+                <a *ngIf="isLoggedIn" href="application">Application</a>
+                <a *ngIf="isLoggedIn" href="profile">Profile</a>
+                <a *ngIf="!isLoggedIn && !isAdminLogIn" href="login">Signup / Login</a>
+                <a *ngIf="isLoggedIn" (click)="logout()" href="">Logout</a>
+                <a *ngIf="isAdminLogIn" (click)="logout()" href="">Logout</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+</body>
